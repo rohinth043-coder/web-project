@@ -1,0 +1,63 @@
+🍔 Project: FreshBite – Online Food Ordering
+
+Technologies:
+
+HTML → Website structure
+CSS → Design and layout
+JavaScript → Food selection, cart, quantity, total price, order functionality
+Main Pages / Features
+Home Page
+FreshBite logo
+Navigation bar
+Food categories
+Popular foods
+"Order Now" button
+Food Menu
+Pizza 🍕
+Burger 🍔
+Biryani 🍚
+Sandwich 🥪
+Drinks 🥤
+Food price
+Add to Cart button
+Shopping Cart
+Selected food items
+Quantity + / −
+Remove item
+Total amount
+Order Page
+Customer name
+Phone number
+Delivery address
+Payment option
+Place Order button
+JavaScript Functions
+Add food to cart
+Increase/decrease quantity
+Calculate total
+Remove food
+Place order message
+📁 Simple Project Structure
+FreshBite/
+│
+├── index.html
+├── menu.html
+├── cart.html
+├── style.css
+└── script.js
+🔄 Working Flow
+Home
+↓
+Food Menu
+↓
+Select Food
+↓
+Add to Cart
+↓
+View Cart
+↓
+Enter Delivery Details
+↓
+Place Order
+↓
+Order Confirmed
