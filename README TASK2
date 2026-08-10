@@ -1,0 +1,65 @@
+# StyleHub - Fashion & Apparel
+
+StyleHub is a simple fashion and apparel website created using **HTML, CSS, and JavaScript**. It allows users to view fashion products, filter products by category, and add products to a shopping cart.
+
+## Features
+
+* 🏠 Home page
+* 👕 Fashion product section
+* 👔 Men's clothing category
+* 👗 Women's clothing category
+* 👟 Shoes category
+* 🛒 Add to Cart functionality
+* 🔢 Cart item count
+* 💰 Automatic cart total
+* 🔍 Product category filtering
+* 📱 Responsive design
+* 🎨 Modern and simple user interface
+* 🔗 Smooth navigation between sections
+* 📄 About and Footer sections
+
+## Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Project Structure
+
+```text
+StyleHub/
+│
+└── index.html
+```
+
+HTML, CSS, and JavaScript are included in a single `index.html` file.
+
+## How to Run
+
+1. Create a folder named `StyleHub`.
+2. Create a file named `index.html`.
+3. Paste the project code into the file.
+4. Save the file.
+5. Open `index.html` in a web browser.
+
+## Purpose
+
+The purpose of this project is to create a simple fashion shopping website and practice **HTML, CSS, and JavaScript** concepts such as layouts, styling, buttons, functions, events, product filtering, and cart functionality.
+
+## Future Improvements
+
+* User login and registration
+* Product search
+* Product details page
+* Online payment
+* Order tracking
+* Backend and database integration
+* Wishlist feature
+
+## Author
+
+**Rohinth**
+
+## License
+
+This project is created for learning and educational purposes.
