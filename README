@@ -1,63 +1,66 @@
-🍔 Project: FreshBite – Online Food Ordering
+# TechWorld - Electronics & Gadgets
 
-Technologies:
+## 📌 About
 
-HTML → Website structure
-CSS → Design and layout
-JavaScript → Food selection, cart, quantity, total price, order functionality
-Main Pages / Features
-Home Page
-FreshBite logo
-Navigation bar
-Food categories
-Popular foods
-"Order Now" button
-Food Menu
-Pizza 🍕
-Burger 🍔
-Biryani 🍚
-Sandwich 🥪
-Drinks 🥤
-Food price
-Add to Cart button
-Shopping Cart
-Selected food items
-Quantity + / −
-Remove item
-Total amount
-Order Page
-Customer name
-Phone number
-Delivery address
-Payment option
-Place Order button
-JavaScript Functions
-Add food to cart
-Increase/decrease quantity
-Calculate total
-Remove food
-Place order message
-📁 Simple Project Structure
-FreshBite/
-│
-├── index.html
-├── menu.html
-├── cart.html
-├── style.css
-└── script.js
-🔄 Working Flow
-Home
-↓
-Food Menu
-↓
-Select Food
-↓
-Add to Cart
-↓
-View Cart
-↓
-Enter Delivery Details
-↓
-Place Order
-↓
-Order Confirmed
+TechWorld is a simple electronics and gadgets shopping website built using **HTML, CSS, and JavaScript**.
+
+It does **not use a database**. All product information is stored directly in the JavaScript code.
+
+## 🛠️ Technologies
+
+* HTML5
+* CSS3
+* JavaScript
+
+## ✨ Features
+
+* Product listing
+* Product search
+* Add to cart
+* Remove from cart
+* Cart item count
+* Automatic total price
+* Simple checkout
+* Responsive design
+
+## 📁 Project Structure
+
+```text
+TechWorld/
+└── index.html
+```
+
+All HTML, CSS, and JavaScript code is contained in one file.
+
+## ▶️ How to Run
+
+1. Create a file named `index.html`.
+2. Paste the project code into the file.
+3. Save the file.
+4. Open `index.html` in any web browser.
+
+No server or database is required.
+
+## 🛒 Product Data
+
+Products are stored in a JavaScript array:
+
+```javascript
+const products = [
+    {name:"Smartphone", price:25000, img:"📱"},
+    {name:"Laptop", price:55000, img:"💻"}
+];
+```
+
+You can add or edit products directly in this array.
+
+## ⚠️ Note
+
+This is a **frontend-only project**. The cart and checkout data are temporary and are lost when the page is refreshed.
+
+## 👨‍💻 Project
+
+**Project Name:** TechWorld
+**Type:** Electronics & Gadgets Website
+**Database:** None
+**Language:** HTML, CSS, JavaScript
