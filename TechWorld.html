@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TechWorld - Electronics & Gadgets</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#f2f2f2;color:#222}
+header{background:#111827;color:white;padding:20px;text-align:center}
+header h1{color:#38bdf8}
+nav{margin-top:10px}
+nav input{padding:10px;width:250px;border-radius:20px;border:0}
+
+.hero{
+    background:linear-gradient(120deg,#2563eb,#7c3aed);
+    color:white;text-align:center;padding:50px 20px
+}
+.hero h2{font-size:35px;margin-bottom:10px}
+.hero button,.card button{
+    padding:10px 18px;border:0;border-radius:6px;
+    cursor:pointer;background:#22c55e;color:white
+}
+
+.products{
+    padding:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px
+}
+.card{
+    background:white;padding:20px;text-align:center;
+    border-radius:10px;box-shadow:0 3px 10px #0002
+}
+.card .img{font-size:60px;margin:15px}
+.card h3{margin:10px}
+.price{font-size:20px;font-weight:bold;margin:10px}
+.card button{background:#2563eb;width:100%}
+
+.cart{
+    position:fixed;right:20px;bottom:20px;
+    background:#111827;color:white;
+    padding:15px 20px;border-radius:30px;
+    cursor:pointer
+}
+
+#cartBox{
+    display:none;
+    position:fixed;right:20px;top:80px;
+    width:300px;background:white;
+    padding:20px;border-radius:10px;
+    box-shadow:0 5px 20px #0004
+}
+#cartBox button{margin:5px;padding:5px}
+
+footer{
+    background:#111827;color:white;
+    text-align:center;padding:20px
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>⚡ TechWorld</h1>
+    <p>Electronics & Gadgets</p>
+    <nav>
+        <input id="search" placeholder="Search products..." onkeyup="searchProduct()">
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Latest Technology</h2>
+    <p>Shop smartphones, laptops, headphones and gadgets.</p>
+    <br>
+    <button onclick="document.getElementById('products').scrollIntoView()">
+        Shop Now
+    </button>
+</section>
+
+<section class="products" id="products"></section>
+
+<div class="cart" onclick="showCart()">
+    🛒 Cart (<span id="count">0</span>)
+</div>
+
+<div id="cartBox">
+    <h2>Shopping Cart</h2>
+    <hr><br>
+    <div id="cartItems"></div>
+    <h3>Total: ₹<span id="total">0</span></h3>
+    <br>
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="closeCart()">Close</button>
+</div>
+
+<footer>
+    <p>© 2026 TechWorld | Electronics & Gadgets</p>
+</footer>
+
+<script>
+
+const products=[
+ {name:"Smartphone",price:25000,img:"📱"},
+ {name:"Laptop",price:55000,img:"💻"},
+ {name:"Headphones",price:3000,img:"🎧"},
+ {name:"Smart Watch",price:5000,img:"⌚"},
+ {name:"Gaming Mouse",price:1500,img:"🖱️"},
+ {name:"Keyboard",price:2500,img:"⌨️"}
+];
+
+let cart=[];
+
+function display(data=products){
+    document.getElementById("products").innerHTML=data.map((p,i)=>`
+        <div class="card">
+            <div class="img">${p.img}</div>
+            <h3>${p.name}</h3>
+            <div class="price">₹${p.price}</div>
+            <button onclick="add(${i})">Add to Cart</button>
+        </div>
+    `).join("");
+}
+
+function add(i){
+    cart.push(products[i]);
+    update();
+}
+
+function update(){
+    document.getElementById("count").innerText=cart.length;
+
+    document.getElementById("cartItems").innerHTML=
+        cart.map((p,i)=>`
+            <p>${p.img} ${p.name} - ₹${p.price}
+            <button onclick="remove(${i})">X</button></p>
+        `).join("");
+
+    document.getElementById("total").innerText=
+        cart.reduce((sum,p)=>sum+p.price,0);
+}
+
+function remove(i){
+    cart.splice(i,1);
+    update();
+}
+
+function showCart(){
+    document.getElementById("cartBox").style.display="block";
+}
+
+function closeCart(){
+    document.getElementById("cartBox").style.display="none";
+}
+
+function searchProduct(){
+    let text=document.getElementById("search").value.toLowerCase();
+
+    display(products.filter(p=>
+        p.name.toLowerCase().includes(text)
+    ));
+}
+
+function checkout(){
+    if(cart.length==0)
+        alert("Cart is empty!");
+    else{
+        alert("Order placed successfully!");
+        cart=[];
+        update();
+        closeCart();
+    }
+}
+
+display();
+
+</script>
+
+</body>
+</html>
