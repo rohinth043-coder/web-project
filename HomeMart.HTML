@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeMart - Furniture & Decor</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f4ef;
+            color: #333;
+        }
+
+ 
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b5e3c;
+        }
+
+        .logo span {
+            color: #d49a6a;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #a66a3f;
+        }
+
+        .cart {
+            background: #8b5e3c;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 7%;
+            background: linear-gradient(120deg, #eee2d3, #f8f3ec);
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            color: #5e402b;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8b5e3c;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #6e452b;
+        }
+
+        .hero-image {
+            font-size: 180px;
+        }
+
+        .section {
+            padding: 60px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #5e402b;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .category:hover {
+            transform: translateY(-8px);
+        }
+
+        .category .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            color: #5e402b;
+        }
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            display: flex;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 25px 0 0 25px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #8b5e3c;
+            color: white;
+            padding: 0 22px;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+        }
+
+
+        .filters {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid #8b5e3c;
+            background: white;
+            color: #8b5e3c;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #8b5e3c;
+            color: white;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
+        }
+
+        .product-img {
+            height: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #eee4d8;
+            font-size: 90px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            color: #5e402b;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #a5683d;
+            margin-bottom: 15px;
+        }
+
+        .add-cart {
+            width: 100%;
+            padding: 11px;
+            background: #8b5e3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .add-cart:hover {
+            background: #6e452b;
+        }
+
+        .about {
+            background: #5e402b;
+            color: white;
+            padding: 60px 7%;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #eee;
+        }
+        footer {
+            background: #2f2118;
+            color: white;
+            padding: 30px 7%;
+            text-align: center;
+        }
+
+        footer p {
+            color: #ccc;
+        }
+        .cart-popup {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 320px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 2000;
+        }
+
+        .cart-popup h2 {
+            margin-bottom: 15px;
+            color: #5e402b;
+        }
+
+        .cart-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .close-cart {
+            float: right;
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+        }
+        @media (max-width: 900px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-image {
+                font-size: 120px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-image {
+                font-size: 100px;
+                margin-top: 30px;
+            }
+
+            .products,
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-popup {
+                width: 90%;
+                right: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Home<span>Mart</span></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="cart" onclick="openCart()">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Make Your Home Beautiful</h1>
+            <p>
+                Discover stylish furniture and beautiful home decor
+                products designed to make your home comfortable and elegant.
+            </p>
+
+            <button class="btn" onclick="scrollToProducts()">
+                Shop Now
+            </button>
+        </div>
+
+        <div class="hero-image">
+            🛋️
+        </div>
+
+    </section>
+    <section class="section" id="categories">
+
+        <div class="section-title">
+            <h2>Shop By Category</h2>
+            <p>Find everything you need for your home</p>
+        </div>
+
+        <div class="categories">
+
+            <div class="category" onclick="filterProducts('Furniture')">
+                <div class="icon">🛋️</div>
+                <h3>Furniture</h3>
+            </div>
+
+            <div class="category" onclick="filterProducts('Lighting')">
+                <div class="icon">💡</div>
+                <h3>Lighting</h3>
+            </div>
+
+            <div class="category" onclick="filterProducts('Decor')">
+                <div class="icon">🖼️</div>
+                <h3>Decor</h3>
+            </div>
+
+            <div class="category" onclick="filterProducts('Bedroom')">
+                <div class="icon">🛏️</div>
+                <h3>Bedroom</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="products">
+
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>Choose the perfect products for your home</p>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search furniture or decor..."
+                onkeyup="searchProducts()"
+            >
+            <button onclick="searchProducts()">🔍</button>
+        </div>
+
+
+        <div class="filters">
+
+            <button class="filter-btn active"
+                    onclick="filterProducts('All')">
+                All
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterProducts('Furniture')">
+                Furniture
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterProducts('Lighting')">
+                Lighting
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterProducts('Decor')">
+                Decor
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterProducts('Bedroom')">
+                Bedroom
+            </button>
+
+        </div>
+
+        <div class="products" id="productContainer"></div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>About HomeMart</h2>
+
+        <p>
+            HomeMart is a simple online furniture and home decor store.
+            We provide stylish furniture, lighting, bedroom products and
+            decorative items to make your home more beautiful and comfortable.
+        </p>
+
+    </section>
+
+
+
+    <footer>
+        <p>© 2026 HomeMart - Furniture & Decor. All Rights Reserved.</p>
+    </footer>
+
+
+
+    <div class="cart-popup" id="cartPopup">
+
+        <span class="close-cart" onclick="closeCart()">✖</span>
+
+        <h2>Shopping Cart</h2>
+
+        <div id="cartItems">
+            Your cart is empty.
+        </div>
+
+        <div class="cart-total">
+            Total: ₹<span id="cartTotal">0</span>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const products = [
+
+            {
+                name: "Modern Sofa",
+                category: "Furniture",
+                price: 24999,
+                icon: "🛋️"
+            },
+
+            {
+                name: "Wooden Dining Table",
+                category: "Furniture",
+                price: 18999,
+                icon: "🍽️"
+            },
+
+            {
+                name: "Comfort Chair",
+                category: "Furniture",
+                price: 7999,
+                icon: "🪑"
+            },
+
+            {
+                name: "Luxury Bed",
+                category: "Bedroom",
+                price: 29999,
+                icon: "🛏️"
+            },
+
+            {
+                name: "Bedside Table",
+                category: "Bedroom",
+                price: 5999,
+                icon: "🗄️"
+            },
+
+            {
+                name: "Table Lamp",
+                category: "Lighting",
+                price: 2499,
+                icon: "💡"
+            },
+
+            {
+                name: "Floor Lamp",
+                category: "Lighting",
+                price: 4499,
+                icon: "🛋️"
+            },
+
+            {
+                name: "Wall Painting",
+                category: "Decor",
+                price: 1999,
+                icon: "🖼️"
+            },
+
+            {
+                name: "Decorative Vase",
+                category: "Decor",
+                price: 1299,
+                icon: "🏺"
+            },
+
+            {
+                name: "Indoor Plant",
+                category: "Decor",
+                price: 899,
+                icon: "🌿"
+            },
+
+            {
+                name: "Bookshelf",
+                category: "Furniture",
+                price: 9999,
+                icon: "📚"
+            },
+
+            {
+                name: "Mirror",
+                category: "Decor",
+                price: 2999,
+                icon: "🪞"
+            }
+
+        ];
+
+
+        let cart = [];
+
+
+    
+
+        function displayProducts(productList) {
+
+            const container =
+                document.getElementById("productContainer");
+
+            container.innerHTML = "";
+
+            if (productList.length === 0) {
+
+                container.innerHTML =
+                    "<h3>No products found.</h3>";
+
+                return;
+            }
+
+
+            productList.forEach((product, index) => {
+
+                container.innerHTML += `
+
+                    <div class="product">
+
+                        <div class="product-img">
+                            ${product.icon}
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>${product.name}</h3>
+
+                            <p>${product.category}</p>
+
+                            <div class="price">
+                                ₹${product.price.toLocaleString("en-IN")}
+                            </div>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(${index})">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+
+        
+
+        function addToCart(index) {
+
+            cart.push(products[index]);
+
+            updateCart();
+
+            alert(products[index].name + " added to cart!");
+
+        }
+
+
+
+
+        function updateCart() {
+
+            document.getElementById("cartCount").innerText =
+                cart.length;
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const cartTotal =
+                document.getElementById("cartTotal");
+
+
+            if (cart.length === 0) {
+
+                cartItems.innerHTML =
+                    "Your cart is empty.";
+
+                cartTotal.innerText = "0";
+
+                return;
+            }
+
+
+            let total = 0;
+
+            cartItems.innerHTML = "";
+
+
+            cart.forEach((item, index) => {
+
+                total += item.price;
+
+                cartItems.innerHTML += `
+
+                    <div class="cart-item">
+
+                        ${item.icon}
+                        ${item.name}
+                        - ₹${item.price.toLocaleString("en-IN")}
+
+                    </div>
+
+                `;
+
+            });
+
+
+            cartTotal.innerText =
+                total.toLocaleString("en-IN");
+
+        }
+
+
+    
+
+        function openCart() {
+
+            document.getElementById("cartPopup").style.display =
+                "block";
+
+        }
+
+
+
+
+        function closeCart() {
+
+            document.getElementById("cartPopup").style.display =
+                "none";
+
+        }
+
+
+    
+
+        function filterProducts(category) {
+
+            if (category === "All") {
+
+                displayProducts(products);
+
+            } else {
+
+                const filtered =
+                    products.filter(
+                        product => product.category === category
+                    );
+
+                displayProducts(filtered);
+
+            }
+
+            document.getElementById("products")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+
+
+        function searchProducts() {
+
+            const search =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+            const filtered =
+                products.filter(product =>
+                    product.name
+                    .toLowerCase()
+                    .includes(search)
+                );
+
+
+            displayProducts(filtered);
+
+        }
+
+
+        function scrollToProducts() {
+
+            document.getElementById("products")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+
+
+        displayProducts(products);
+
+    </script>
+
+</body>
+</html>
