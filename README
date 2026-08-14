@@ -1,66 +1,152 @@
-# TechWorld - Electronics & Gadgets
+# HomeMart - Furniture & Decor
 
-## 📌 About
+## 📌 Project Description
 
-TechWorld is a simple electronics and gadgets shopping website built using **HTML, CSS, and JavaScript**.
+**HomeMart** is a simple and responsive furniture and home decor shopping website created using **HTML, CSS, and JavaScript**.
 
-It does **not use a database**. All product information is stored directly in the JavaScript code.
+Users can view furniture and decor products, search for products, filter products by category, and add products to a shopping cart.
 
-## 🛠️ Technologies
+## 🛠️ Technologies Used
 
-* HTML5
-* CSS3
-* JavaScript
+* **HTML5** – Website structure
+* **CSS3** – Styling and responsive design
+* **JavaScript** – Search, filtering, and shopping cart functionality
 
 ## ✨ Features
 
-* Product listing
-* Product search
-* Add to cart
-* Remove from cart
-* Cart item count
-* Automatic total price
-* Simple checkout
-* Responsive design
+* 🏠 Home page
+* 🛋️ Furniture products
+* 💡 Lighting products
+* 🖼️ Home decor products
+* 🛏️ Bedroom products
+* 🔍 Product search
+* 🏷️ Category filtering
+* 🛒 Add to cart
+* 💰 Automatic cart total
+* 📱 Responsive design
+* 📌 Sticky navigation bar
+* ℹ️ About section
+* 📄 Footer section
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
-TechWorld/
+HomeMart/
+│
 └── index.html
 ```
 
-All HTML, CSS, and JavaScript code is contained in one file.
+All **HTML, CSS, and JavaScript** code is included in a single `index.html` file.
 
-## ▶️ How to Run
+## 🚀 How to Run
 
-1. Create a file named `index.html`.
-2. Paste the project code into the file.
-3. Save the file.
-4. Open `index.html` in any web browser.
+1. Create a folder named `HomeMart`.
+2. Create a file named `index.html`.
+3. Copy the HomeMart code into `index.html`.
+4. Save the file.
+5. Open `index.html` in any web browser.
 
-No server or database is required.
+## 🔎 How It Works
 
-## 🛒 Product Data
+### Product Search
 
-Products are stored in a JavaScript array:
+Users can type a product name in the search box.
 
-```javascript
-const products = [
-    {name:"Smartphone", price:25000, img:"📱"},
-    {name:"Laptop", price:55000, img:"💻"}
-];
+Example:
+
+```text
+Sofa
 ```
 
-You can add or edit products directly in this array.
+The website displays matching products.
 
-## ⚠️ Note
+### Category Filter
 
-This is a **frontend-only project**. The cart and checkout data are temporary and are lost when the page is refreshed.
+Users can select categories such as:
+
+* Furniture
+* Lighting
+* Decor
+* Bedroom
+
+The JavaScript filters the products based on the selected category.
+
+### Shopping Cart
+
+When the user clicks **Add to Cart**, the selected product is added to the cart.
+
+The cart automatically displays:
+
+* Product name
+* Product price
+* Number of products
+* Total price
+
+## 📦 Product Data
+
+Products are stored in a JavaScript array.
+
+Example:
+
+```javascript
+{
+    name: "Modern Sofa",
+    category: "Furniture",
+    price: 24999,
+    icon: "🛋️"
+}
+```
+
+No database is required for this project.
+
+## 📱 Responsive Design
+
+The website works on:
+
+* 💻 Desktop
+* 💻 Laptop
+* 📱 Mobile
+* 📱 Tablet
+
+CSS media queries are used to make the website responsive.
+
+## 🎯 Project Objective
+
+The main objective of HomeMart is to create a simple online furniture and home decor shopping interface using basic frontend technologies.
+
+## 🔮 Future Improvements
+
+The project can be improved by adding:
+
+* User login and registration
+* Product details page
+* Product images
+* Checkout page
+* Payment gateway
+* Backend database
+* Order history
+* Wishlist
+* Admin dashboard
+
+## 📚 Learning Outcomes
+
+By completing this project, you can learn:
+
+* HTML webpage structure
+* CSS layouts and responsive design
+* JavaScript arrays and objects
+* DOM manipulation
+* Search functionality
+* Category filtering
+* Shopping cart logic
+* Event handling
 
 ## 👨‍💻 Project
 
-**Project Name:** TechWorld
-**Type:** Electronics & Gadgets Website
-**Database:** None
-**Language:** HTML, CSS, JavaScript
+**Project Name:** HomeMart - Furniture & Decor
+**Type:** Frontend Web Development
+**Technologies:** HTML, CSS, JavaScript
+
+## 📄 License
+
+This project is created for **educational and learning purposes**.
