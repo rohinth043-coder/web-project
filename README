@@ -1,50 +1,48 @@
-# HomeMart - Furniture & Decor
+# BookNook - Books & Stationery
 
 ## 📌 Project Description
 
-**HomeMart** is a simple and responsive furniture and home decor shopping website created using **HTML, CSS, and JavaScript**.
+**BookNook** is a simple e-commerce website for buying **books and stationery products**.
 
-Users can view furniture and decor products, search for products, filter products by category, and add products to a shopping cart.
+The website is created using **HTML, CSS, and JavaScript**. Users can view products, search for products, filter products by category, and add products to the cart.
 
 ## 🛠️ Technologies Used
 
 * **HTML5** – Website structure
-* **CSS3** – Styling and responsive design
-* **JavaScript** – Search, filtering, and shopping cart functionality
+* **CSS3** – Website design and responsive layout
+* **JavaScript** – Search, filtering, and cart functionality
 
 ## ✨ Features
 
 * 🏠 Home page
-* 🛋️ Furniture products
-* 💡 Lighting products
-* 🖼️ Home decor products
-* 🛏️ Bedroom products
+* 📚 Books category
+* 📓 Notebooks category
+* 🖊️ Pens category
+* 🎨 Art Supplies category
 * 🔍 Product search
-* 🏷️ Category filtering
 * 🛒 Add to cart
-* 💰 Automatic cart total
+* 🔢 Cart item count
 * 📱 Responsive design
-* 📌 Sticky navigation bar
 * ℹ️ About section
-* 📄 Footer section
+* 📄 Footer
 
 ## 📂 Project Structure
 
 ```text
-HomeMart/
+BookNook/
 │
 └── index.html
 ```
 
-All **HTML, CSS, and JavaScript** code is included in a single `index.html` file.
+All HTML, CSS, and JavaScript code is included in **one `index.html` file**.
 
 ## 🚀 How to Run
 
-1. Create a folder named `HomeMart`.
+1. Create a folder named `BookNook`.
 2. Create a file named `index.html`.
-3. Copy the HomeMart code into `index.html`.
+3. Copy the BookNook code into the file.
 4. Save the file.
-5. Open `index.html` in any web browser.
+5. Open `index.html` in a web browser.
 
 ## 🔎 How It Works
 
@@ -55,45 +53,44 @@ Users can type a product name in the search box.
 Example:
 
 ```text
-Sofa
+Science Book
 ```
 
-The website displays matching products.
+The website displays the matching product.
 
 ### Category Filter
 
-Users can select categories such as:
+Users can select a category:
 
-* Furniture
-* Lighting
-* Decor
-* Bedroom
+* Books
+* Notebooks
+* Pens
+* Art Supplies
 
-The JavaScript filters the products based on the selected category.
+JavaScript filters the products according to the selected category.
 
 ### Shopping Cart
 
-When the user clicks **Add to Cart**, the selected product is added to the cart.
+When the user clicks **Add to Cart**, the cart count increases.
 
-The cart automatically displays:
+Example:
 
-* Product name
-* Product price
-* Number of products
-* Total price
+```text
+🛒 Cart (3)
+```
 
 ## 📦 Product Data
 
-Products are stored in a JavaScript array.
+Products are stored inside a JavaScript array.
 
 Example:
 
 ```javascript
 {
-    name: "Modern Sofa",
-    category: "Furniture",
-    price: 24999,
-    icon: "🛋️"
+    name: "Daily Notebook",
+    category: "Notebooks",
+    price: 199,
+    icon: "📓"
 }
 ```
 
@@ -101,18 +98,18 @@ No database is required for this project.
 
 ## 📱 Responsive Design
 
-The website works on:
+The website is designed to work on:
 
 * 💻 Desktop
 * 💻 Laptop
 * 📱 Mobile
 * 📱 Tablet
 
-CSS media queries are used to make the website responsive.
+CSS media queries are used for responsive design.
 
 ## 🎯 Project Objective
 
-The main objective of HomeMart is to create a simple online furniture and home decor shopping interface using basic frontend technologies.
+The objective of BookNook is to create a simple online shopping website for books and stationery while learning basic frontend web development.
 
 ## 🔮 Future Improvements
 
@@ -120,32 +117,35 @@ The project can be improved by adding:
 
 * User login and registration
 * Product details page
-* Product images
+* Real product images
+* Shopping cart page
 * Checkout page
-* Payment gateway
-* Backend database
-* Order history
+* Online payment
+* Order tracking
 * Wishlist
+* Backend database
 * Admin dashboard
 
 ## 📚 Learning Outcomes
 
-By completing this project, you can learn:
+This project helps you learn:
 
 * HTML webpage structure
-* CSS layouts and responsive design
+* CSS styling
+* Responsive design
 * JavaScript arrays and objects
 * DOM manipulation
 * Search functionality
 * Category filtering
-* Shopping cart logic
 * Event handling
+* Basic shopping cart logic
 
-## 👨‍💻 Project
+## 👨‍💻 Project Details
 
-**Project Name:** HomeMart - Furniture & Decor
-**Type:** Frontend Web Development
+**Project Name:** BookNook - Books & Stationery
+**Project Type:** E-commerce Website
 **Technologies:** HTML, CSS, JavaScript
+**Database:** Not Required
 
 ## 📄 License
 
