@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNook - Books & Stationery</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f5f0;
+            color: #333;
+        }
+
+        nav {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #5b3a29;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            color: #8b5e3c;
+        }
+
+        .cart {
+            background: #6b4226;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 70px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #eadccf;
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #4d3020;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            border: none;
+            background: #6b4226;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .hero-icon {
+            font-size: 150px;
+        }
+
+        .section {
+            padding: 50px 7%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title h2 {
+            color: #4d3020;
+            font-size: 32px;
+        }
+
+        .title p {
+            margin-top: 8px;
+            color: #777;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .category h3 {
+            color: #5b3a29;
+        }
+
+        .search {
+            max-width: 500px;
+            margin: 0 auto 25px;
+            display: flex;
+        }
+
+        .search input {
+            flex: 1;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 6px 0 0 6px;
+            outline: none;
+        }
+
+        .search button {
+            border: none;
+            background: #6b4226;
+            color: white;
+            padding: 0 20px;
+            cursor: pointer;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+        .product-image {
+            height: 180px;
+            background: #eee2d5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 75px;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-info h3 {
+            color: #4d3020;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #8b512b;
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .add-btn {
+            width: 100%;
+            border: none;
+            background: #6b4226;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-btn:hover {
+            background: #4d3020;
+        }
+
+        .about {
+            background: #5b3a29;
+            color: white;
+            text-align: center;
+            padding: 50px 7%;
+        }
+
+        .about h2 {
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #2d1d13;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-icon {
+                font-size: 100px;
+                margin-top: 25px;
+            }
+
+            .categories,
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .categories,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            📚 BookNook
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <div class="cart" onclick="showCart()">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </div>
+
+    </nav>
+
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>Discover Your Next Favorite Book</h1>
+
+            <p>
+                Explore amazing books, notebooks, pens and
+                stationery products at BookNook.
+            </p>
+
+            <button class="btn" onclick="goToProducts()">
+                Shop Now
+            </button>
+
+        </div>
+
+        <div class="hero-icon">
+            📚
+        </div>
+
+    </section>
+
+    <section class="section" id="categories">
+
+        <div class="title">
+            <h2>Shop By Category</h2>
+            <p>Find books and stationery you love</p>
+        </div>
+
+        <div class="categories">
+
+            <div class="category" onclick="filterProducts('Books')">
+                <div class="category-icon">📖</div>
+                <h3>Books</h3>
+            </div>
+
+            <div class="category" onclick="filterProducts('Notebooks')">
+                <div class="category-icon">📓</div>
+                <h3>Notebooks</h3>
+            </div>
+
+            <div class="category" onclick="filterProducts('Pens')">
+                <div class="category-icon">🖊️</div>
+                <h3>Pens</h3>
+            </div>
+
+            <div class="category" onclick="filterProducts('Art')">
+                <div class="category-icon">🎨</div>
+                <h3>Art Supplies</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="products">
+
+        <div class="title">
+            <h2>Our Products</h2>
+            <p>Choose your favorite products</p>
+        </div>
+
+        <div class="search">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                onkeyup="searchProducts()"
+            >
+
+            <button onclick="searchProducts()">
+                🔍
+            </button>
+
+        </div>
+
+
+        <div class="products" id="productList"></div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <h2>About BookNook</h2>
+
+        <p>
+            BookNook is a simple online store for book lovers and
+            stationery enthusiasts. Find books, notebooks, pens
+            and art supplies in one place.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 BookNook - Books & Stationery
+        </p>
+
+    </footer>
+
+
+    <script>
+
+
+        const products = [
+
+            {
+                name: "The Great Adventure",
+                category: "Books",
+                price: 499,
+                icon: "📖"
+            },
+
+            {
+                name: "Mystery Stories",
+                category: "Books",
+                price: 399,
+                icon: "📕"
+            },
+
+            {
+                name: "Science Book",
+                category: "Books",
+                price: 599,
+                icon: "📘"
+            },
+
+            {
+                name: "Classic Novel",
+                category: "Books",
+                price: 299,
+                icon: "📗"
+            },
+
+            {
+                name: "Daily Notebook",
+                category: "Notebooks",
+                price: 199,
+                icon: "📓"
+            },
+
+            {
+                name: "Premium Notebook",
+                category: "Notebooks",
+                price: 349,
+                icon: "📔"
+            },
+
+            {
+                name: "Blue Ball Pen",
+                category: "Pens",
+                price: 50,
+                icon: "🖊️"
+            },
+
+            {
+                name: "Gel Pen Set",
+                category: "Pens",
+                price: 150,
+                icon: "🖋️"
+            },
+
+            {
+                name: "Color Pencil Set",
+                category: "Art",
+                price: 250,
+                icon: "🖍️"
+            },
+
+            {
+                name: "Water Color Set",
+                category: "Art",
+                price: 300,
+                icon: "🎨"
+            }
+
+        ];
+
+
+        let cart = 0;
+
+
+        function displayProducts(list) {
+
+            const productList =
+                document.getElementById("productList");
+
+            productList.innerHTML = "";
+
+
+            list.forEach((product) => {
+
+                productList.innerHTML += `
+
+                    <div class="product">
+
+                        <div class="product-image">
+                            ${product.icon}
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>${product.name}</h3>
+
+                            <p>${product.category}</p>
+
+                            <div class="price">
+                                ₹${product.price}
+                            </div>
+
+                            <button
+                                class="add-btn"
+                                onclick="addToCart()">
+
+                                Add to Cart
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+
+
+        function addToCart() {
+
+            cart++;
+
+            document.getElementById("cartCount")
+                .innerText = cart;
+
+            alert("Product added to cart!");
+
+        }
+
+
+
+        function searchProducts() {
+
+            const search =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+            const result =
+                products.filter(product =>
+                    product.name
+                        .toLowerCase()
+                        .includes(search)
+                );
+
+
+            displayProducts(result);
+
+        }
+
+
+
+        function filterProducts(category) {
+
+            const result =
+                products.filter(product =>
+                    product.category === category
+                );
+
+            displayProducts(result);
+
+            goToProducts();
+
+        }
+
+
+
+
+        function goToProducts() {
+
+            document.getElementById("products")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+
+
+        function showCart() {
+
+            alert("You have " + cart + " item(s) in your cart.");
+
+        }
+
+
+      
+
+        displayProducts(products);
+
+    </script>
+
+</body>
+</html>
